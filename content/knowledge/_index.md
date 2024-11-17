@@ -12,11 +12,11 @@ author: Haruki Saito
 
 # 作成教材一覧
 
-[高校地学]()
+- [高校地学]()
 
 ## IT系
-[Git&Github講習会]()
-[初心者のためのJava](https://github.com/JustCat3456/java_lesson)
+- [Git&Github講習会]()
+- [初心者のためのJava](https://github.com/JustCat3456/java_lesson)
 
 
-アクセス権限が私のみのリンク
+#### [アクセス権限が私のみのページ](https://github.com/JustCat3456/knowlege_private)
