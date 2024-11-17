@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Haru&#39;s Homapage</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Haru&#39;s Homapage</description>
+    <image>
+      <title>Haru&#39;s Homapage</title>
+      <url>http://localhost:1313/content/me.jpg</url>
+      <link>http://localhost:1313/content/me.jpg</link>
+    </image>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homepageの更新をしました</title>
+      <link>http://localhost:1313/posts/firstpost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/firstpost/</guid>
+      <description>&lt;h1 id=&#34;jekyllから更新をしました&#34;&gt;jekyllから更新をしました&lt;/h1&gt;
+&lt;p&gt;ホームページを jekyllで作成していましたが、hugoに変更しました。&lt;/p&gt;
+&lt;p&gt;理由は hugo のほうがやはり高速だからです。
+jekyllは少し遅かった&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;ホームページに時間と労力をかけない&#34;&gt;ホームページに時間と労力をかけない&lt;/h1&gt;
+&lt;p&gt;ホームページをやはりシンプルに運用する。それが重要なのではないかと最近感じました。cmsとかレスポンシブとか、これをreactとかでやろうとすると最近のフロントエンドの流れは早いわけですから、大変になります。&lt;/p&gt;
+&lt;p&gt;ですので、いかに労力をかけずシンプルに保守運用できるかが重要だと思います。&lt;/p&gt;
+&lt;h1 id=&#34;githubに教材を乗せる&#34;&gt;Githubに教材を乗せる&lt;/h1&gt;
+&lt;p&gt;教材の公開をGoogle driveなどで考えていましたが、体系的にアクセスしたり、修正するうえでGithubは非常に良いと考えています。プルリクやイシューから簡単に修正依頼を出せますし、Gitでバージョン管理ができるのが素晴らしいと思います。&lt;/p&gt;
+&lt;p&gt;いま、一つだけ悩んでいるのが授業スライドだけGoogle slideを利用する必要があることです。ユーザビリティを考えるのならばいちいちダウンロードせずに利用したいのでGoogle slideで共有する必要があります。markdownでスライドを作成できるmarpは現在考察中です。&lt;/p&gt;
+&lt;h1 id=&#34;さあ教材を作成して公開するぞ&#34;&gt;さあ教材を作成して公開するぞ&lt;/h1&gt;
+&lt;p&gt;3日坊主とはいいますが、減らせるところの労力は減らして教材作成の時間に集中して取り組んでいこうと思います。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
