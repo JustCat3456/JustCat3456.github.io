@@ -128,7 +128,7 @@ menu:
       name: About Me
       url: /about/
       weight: 30
-    - name: Search
+    - name: Search 
       url: /search/
       weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
