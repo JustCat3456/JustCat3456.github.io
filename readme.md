@@ -1,1 +1,5 @@
-# this is a test
+# Welcome My Homepage
+
+これはハルのGithubホームページです。
+
+HugoのPaparmodを利用しています。

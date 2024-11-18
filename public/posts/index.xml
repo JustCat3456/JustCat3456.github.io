@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Haru&#39;s Homapage</title>
+    <title>Blog on Haru&#39;s Homapage</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Haru&#39;s Homapage</description>
+    <description>Recent content in Blog on Haru&#39;s Homapage</description>
     <image>
       <title>Haru&#39;s Homapage</title>
       <url>http://localhost:1313/content/me.jpg</url>

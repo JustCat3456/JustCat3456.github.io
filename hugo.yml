@@ -19,7 +19,7 @@ params:
   title: "Haru's Homapage"
   description: "This is a homapege of Haru"
   keywords: [Blog, Portfolio, PaperMod,地学]
-  author: Me
+  author: Haryki Saito
   # author: ["Me", "You"] # multiple authors
   images: ["./content/me.jpg"]
   DateFormat: "January 2, 2006"
@@ -30,7 +30,7 @@ params:
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: ture
+  ShowCodeCopyButtons: true
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
@@ -39,7 +39,7 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: ture
+  showtoc: true
   tocopen: false
 
   assets:
@@ -82,6 +82,8 @@ params:
       url: "https://x.com/JustCat3456"
     - name: github
       url: "https://github.com/JustCat3456"
+    - name: Youtube
+      url: "https://www.youtube.com/@JustCat-zw9ob"
 
   analytics:
     google:
@@ -145,3 +147,5 @@ outputs:
     - HTML
     - RSS
     - JSON # necessary for search
+
+    
