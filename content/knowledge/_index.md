@@ -12,7 +12,7 @@ author: Haruki Saito
 
 # 作成教材一覧
 
-- [高校地学]()
+- [高校地学](https://justcat3456.github.io/geoscience_highschool_lessson/)
 
 ## IT系
 - [Git&Github講習会]()
