@@ -15,7 +15,7 @@ author: Haruki Saito
 - [高校地学](https://justcat3456.github.io/geoscience_highschool_lessson/)
 
 ## IT系
-- [Git&Github講習会](https://drive.google.com/drive/folders/1hxJC4I1THLVDawlKwnL32YgYErggU3Qh?usp=sharing)
+- [Git&Github講習会](https://drive.google.com/drive/folders/14qAeCZV6AdwfCniCaFPXX8c9KodVKL79?usp=sharing)
 - [初心者のためのJava](https://github.com/JustCat3456/java_lesson)
 
 
