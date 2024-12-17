@@ -35,11 +35,7 @@ Hapy Birthday Shion!
 
 紫咲シオンは、私が今一番好きなバーチャルYouTuberです。彼女の配信を聞いていると、自分も楽しくなります。これからも紫咲シオンの配信を楽しみにしています。
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lxpXRkhvZuY?si=ZjfSFw7yIdUHNyxh&amp;start=50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![](https://img.youtube.com/vi/lxpXRkhvZuY/0.jpg)](https://www.youtube.com/watch?v=lxpXRkhvZuY)
 
 
 まだ自分もマニュアル持ってない。ぐぬぬ...
-
-
-
