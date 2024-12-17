@@ -1,7 +1,7 @@
 ---
-title:Marpによる授業スライド作成
-date:2024-12-03
-author:Haruki Saito
+title: Marpによる授業スライド作成
+date: 2024-12-03
+author: Haruki Saito
 ---
 
 ## Marpとは
