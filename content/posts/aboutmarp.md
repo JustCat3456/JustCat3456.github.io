@@ -31,14 +31,16 @@ MarpはMarkdown記法でスライドを作成するためのツールです。
 
 Marpを使うためには、VSCodeとMarp for VSCodeのインストールが必要です。
 marpはlinuxはapt、macはhomebrewでインストールを行ってください。
-'''zsh
+
+```zsh
 sudo apt install marp
-'''
+```
+
 以上で環境構築は完了です。
 
 ## 使いかた
 
-'''markdown
+```markdown
 ---
 marp: true
 theme: default
@@ -69,7 +71,7 @@ MarpはMarkdown記法でスライドを作成するためのツールです。
 - ホームページにHtmlで掲載することができる
 
 以上がMarpの使い方です。
-'''
+```
 
 このように、yaml形式でスライドの設定を行い、markdown記法でスライドを作成することができます。改ページは---で行います。
 
