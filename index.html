@@ -1,19 +1,90 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Retro OS v1.80 - Portfolio</title>
-    <!-- Google Fonts: レトロ・モダン・等幅の組み合わせ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fontshare: Satoshi -->
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400;700&display=swap" rel="stylesheet">
-    <!-- Google Fonts: VT323 & Share Tech Mono -->
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retro OS v1.80 - Portfolio</title>
+  <meta name="description" content="齋藤 遼樹 (JustCat) のポートフォリオ。琉球大学理学部地球科学B3。80年代レトロOSスタイルのインタラクティブサイト。" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Markdown parser (marked.js CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- CRT Monitor Simulation -->
+  <div id="crt-screen" class="crt-screen"></div>
+  <div class="crt-bezel"></div>
+
+  <div class="os-container">
+
+    <!-- ===== Menu Bar ===== -->
+    <header class="menu-bar">
+      <div class="menu-left">
+        <span class="menu-brand">
+          <!-- Floppy disk pixel icon -->
+          <svg class="pixel-icon icon-floppy" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1h8l2 2v8H1V1z" fill="var(--bg-canvas)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
+            <rect x="3" y="1" width="5" height="3" fill="var(--bg-window)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
+            <rect x="3" y="7" width="6" height="4" fill="var(--bg-window)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
+            <rect x="7" y="8" width="1" height="2" fill="var(--color-muted)" style="shape-rendering:crispEdges"/>
+          </svg>
+          RetroOS
+        </span>
+
+        <nav class="menu-nav">
+          <!-- File Menu -->
+          <div class="menu-item" id="menu-file">
+            <span class="menu-trigger" id="menu-trigger-file">File</span>
+            <div class="dropdown">
+              <button onclick="openWindow('win-welcome')">Welcome.txt</button>
+              <button onclick="openWindow('win-profile')">Profile.sys</button>
+              <button onclick="openWindow('win-projects')">Projects.exe</button>
+              <button onclick="openWindow('win-blog')">Blog.exe</button>
+              <button onclick="openWindow('win-contact')">Terminal.com</button>
+            </div>
+          </div>
+
+          <!-- View Menu -->
+          <div class="menu-item" id="menu-view">
+            <span class="menu-trigger" id="menu-trigger-view">View</span>
+            <div class="dropdown">
+              <button onclick="cleanDesktop()">Clean Desktop</button>
+              <button onclick="toggleScanlines()">Toggle CRT Scanline</button>
+              <button onclick="toggleThemeMode()">Toggle Dark Mode</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="menu-right">
+        <span id="system-clock" class="system-mono">12:00:00 AM</span>
+      </div>
+    </header>
+
+    <!-- ===== Desktop ===== -->
+    <main class="desktop" id="desktop">
+      <!-- Desktop icons are injected by app.js -->
+      <div class="desktop-icons"></div>
+
+      <!-- Windows are injected by app.js -->
+    </main>
+
+  </div>
+
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+
+</body>
 </html>

@@ -1,24 +1,21 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Dependencies (not needed for vanilla JS)
+node_modules/
 
-node_modules
-dist
-dist-ssr
-*.local
+# Build output (no longer needed)
+dist/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# React/Vite source (migrated to vanilla JS)
+src/
+
+# Vite config files (no longer needed)
+vite.config.js
+eslint.config.js
+package.json
+package-lock.json
+
+# OS/Editor generated files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+*.local
+.vscode/
+.idea/
