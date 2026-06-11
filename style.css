@@ -731,6 +731,8 @@ body {
 
 .blog-sidebar {
     width: 200px;
+    min-width: 200px;      /* flexコンテナ内で縮まないよう固定 */
+    flex-shrink: 0;        /* flex-shrink デフォルトの1を無効化 */
     border-right: var(--border-width) solid var(--color-text);
     background-color: var(--bg-window);
     overflow-y: auto;
