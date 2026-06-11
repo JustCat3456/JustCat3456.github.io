@@ -640,9 +640,21 @@ function createDesktopIcons() {
     {
       id: 'win-profile', label: 'Profile.sys',
       svg: `<svg class="pixel-icon" width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="12" height="12" fill="var(--bg-window)" stroke="var(--color-text)" stroke-width="1.2" style="shape-rendering:crispEdges"/>
-        <rect x="5" y="5" width="6" height="6" fill="var(--bg-canvas)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
-        <circle cx="8" cy="8" r="1.5" fill="var(--color-accent)"/>
+        <!-- 頭 -->
+        <rect x="5" y="1" width="6" height="5" fill="var(--bg-canvas)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
+        <!-- 目 -->
+        <rect x="6" y="3" width="1" height="1" fill="var(--color-accent)" style="shape-rendering:crispEdges"/>
+        <rect x="9" y="3" width="1" height="1" fill="var(--color-accent)" style="shape-rendering:crispEdges"/>
+        <!-- 胴体 -->
+        <rect x="4" y="6" width="8" height="5" fill="var(--color-accent)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
+        <!-- 左腕 -->
+        <rect x="2" y="6" width="2" height="4" fill="var(--bg-canvas)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
+        <!-- 右腕 -->
+        <rect x="12" y="6" width="2" height="4" fill="var(--bg-canvas)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
+        <!-- 左足 -->
+        <rect x="5" y="11" width="2" height="4" fill="var(--bg-canvas)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
+        <!-- 右足 -->
+        <rect x="9" y="11" width="2" height="4" fill="var(--bg-canvas)" stroke="var(--color-text)" stroke-width="1" style="shape-rendering:crispEdges"/>
       </svg>`
     },
     {
