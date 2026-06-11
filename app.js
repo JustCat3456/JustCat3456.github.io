@@ -115,8 +115,19 @@ function initDraggableWindows() {
         if (!header) return;
 
         // ウィンドウ内をクリックした際にもフォーカスを当てる
-        win.addEventListener('mousedown', () => {
+        win.addEventListener('mousedown', (e) => {
+            if (e.target.classList.contains('window-control-close') || e.target.classList.contains('window-control-zoom')) {
+                e.stopPropagation();
+                return;
+            }
             focusWindow(win);
+        });
+
+        // 閉じる・ズームボタン単体でのmousedown伝播も防止
+        win.querySelectorAll('.window-control-close, .window-control-zoom').forEach(btn => {
+            btn.addEventListener('mousedown', (e) => {
+                e.stopPropagation();
+            });
         });
 
         let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -126,7 +137,10 @@ function initDraggableWindows() {
         function dragMouseDown(e) {
             e = e || window.event;
             // 閉じるボタンやズームボタンをクリックした場合はドラッグを開始しない
-            if (e.target.classList.contains('window-control-close') || e.target.classList.contains('window-control-zoom')) return;
+            if (e.target.classList.contains('window-control-close') || e.target.classList.contains('window-control-zoom')) {
+                e.stopPropagation();
+                return;
+            }
 
             e.preventDefault();
             focusWindow(win);
@@ -279,19 +293,32 @@ function initTerminal() {
    5. システムメニュー外側クリックで閉じる挙動
    -------------------------------------------------------------------------- */
 function initSystemMenu() {
-    // ドロップダウンを持つすべてのメニュー項目を監視
     const menuItems = document.querySelectorAll('.menu-item');
     
-    document.addEventListener('click', (e) => {
-        menuItems.forEach(item => {
-            if (item.contains(e.target)) {
-                // クリックされたメニューをトグル
+    menuItems.forEach(item => {
+        const trigger = item.querySelector('.menu-trigger');
+        if (trigger) {
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menuItems.forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
                 item.classList.toggle('active');
-            } else {
-                // 外側がクリックされたら非表示
-                item.classList.remove('active');
-            }
+            });
+        }
+    });
+
+    // ドロップダウン内のボタンクリック時はイベント伝播を止め、メニューを閉じる
+    document.querySelectorAll('.dropdown button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuItems.forEach(item => item.classList.remove('active'));
         });
+    });
+
+    // メニュー外側クリックでメニューを閉じる
+    document.addEventListener('click', () => {
+        menuItems.forEach(item => item.classList.remove('active'));
     });
 }
 
