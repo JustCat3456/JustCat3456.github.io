@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initClock();
     initDraggableWindows();
     initZoomWindows();
+    initBlog();
     initTerminal();
     initSystemMenu();
 });
@@ -77,6 +78,7 @@ function resetWindowPositions() {
         'win-welcome': { top: '8%', left: '15%', width: '550px' },
         'win-profile': { top: '15%', left: '35%', width: '500px' },
         'win-projects': { top: '25%', left: '20%', width: '600px' },
+        'win-blog': { top: '30%', left: '25%', width: '650px' },
         'win-contact': { top: '35%', left: '40%', width: '520px' }
     };
 
@@ -201,6 +203,8 @@ function initTerminal() {
             appendLine('Available commands:');
             appendLine('  <span class="accent-text">about</span>    - Show profile summary');
             appendLine('  <span class="accent-text">projects</span> - List recent creative archives');
+            appendLine('  <span class="accent-text">blog</span>     - List recent blog posts');
+            appendLine('  <span class="accent-text">blog [num]</span> - View blog post details (e.g. blog 1)');
             appendLine('  <span class="accent-text">contact</span>  - Instructions to send mail');
             appendLine('  <span class="accent-text">clear</span>    - Clear the screen');
             appendLine('  <span class="accent-text">mail [msg]</span>- Simulate sending a message to administrator');
@@ -216,6 +220,32 @@ function initTerminal() {
             appendLine('1. Just Timer [202X] - Chrome Extension');
             appendLine('2. Retro OS Portfolio [2026] - 80s OS Style');
             appendLine('Try checking out the "Projects.exe" window for details!');
+        } 
+        else if (cmd.startsWith('blog')) {
+            const args = originalQuery.trim().split(/\s+/);
+            if (args.length === 1) {
+                appendLine('--- Recent Blog Posts ---');
+                blogPosts.forEach(post => {
+                    appendLine(`[${post.id}] ${post.title} (${post.date})`);
+                });
+                appendLine('Type "blog [ID]" to read a specific post (e.g., blog 1)');
+            } else {
+                const targetId = args[1];
+                const post = blogPosts.find(p => p.id === targetId);
+                if (post) {
+                    appendLine(`=== ${post.title} ===`);
+                    appendLine(`Date: ${post.date} | Author: ${post.author}`);
+                    appendLine('--------------------------------------------');
+                    const plainBody = post.content
+                        .replace(/<\/p>/g, '\n\n')
+                        .replace(/<\/h2>/g, '\n')
+                        .replace(/<[^>]+>/g, '')
+                        .trim();
+                    appendLine(plainBody);
+                } else {
+                    appendLine(`Error: Post ID "${targetId}" not found.`);
+                }
+            }
         } 
         else if (cmd === 'contact') {
             appendLine('To send a message, please use:');
@@ -320,5 +350,92 @@ function toggleThemeMode() {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     localStorage.setItem('themeMode', isDark ? 'dark' : 'light');
+}
+
+/* --------------------------------------------------------------------------
+   8. ブログ機能 (Blog.exe) の初期化 & レンダリング
+   -------------------------------------------------------------------------- */
+const blogPosts = [
+    {
+        id: "1",
+        title: "RQuickShareを使って簡単にファイル共有",
+        date: "2024-12-20",
+        author: "Haruki Saito",
+        content: `
+            <p>Apple製品は「Airdrop」のように素早くファイル共有できる機能があって便利ですが、Androidユーザーと共有するのは面倒です。また、最近のiPhoneは非常に高価です。</p>
+            <h2>Android + Mac という選択</h2>
+            <p>スマホに予算をかけず、PCに投資する選択肢もあります。Android + Macという組み合わせは意外と実用的です。連絡先やカレンダーはGoogleサービスで同期できます。</p>
+            <h2>RQuickShareの導入</h2>
+            <p>RQuickShareを使えば、MacでAndroidの「Quick Share」機能を使ってワイヤレスで素早くファイルを送受信できます。</p>
+            <p>GitHubのリリースからご自身のMacのアーキテクチャに合わせたバイナリ（Intel Macならx64、Apple Siliconならaarch64）をダウンロードして設定するだけで、シームレスなファイル共有が実現します。</p>
+        `
+    },
+    {
+        id: "2",
+        title: "Linuxディストリビューションについての話",
+        date: "2024-12-19",
+        author: "haruki saito",
+        content: `
+            <p>これは琉大アドベントカレンダー2024の記事です。GUIのLinuxビギナー向けに、ディストリビューションについて紹介します。</p>
+            <h2>Linuxの基礎知識</h2>
+            <p><strong>Linux (GUI) = Linuxカーネル + デスクトップ環境</strong></p>
+            <p>Linux OSは、CUIを提供する基本的な「カーネル」と、GUIを操作するための「デスクトップ環境（GNOME, KDE, Xfceなど）」の2つで構成されています。</p>
+            <h2>おすすめのディストリビューション</h2>
+            <p>個人的には、UbuntuとKDEを組み合わせた <strong>KDE neon</strong> が軽量かつaptコマンドが使えてお気に入りです。Arch系が好きなら、拡張性の高い <strong>Manjaro</strong> や <strong>Endeavour OS</strong> がおすすめです。さあ、Linuxを使ってみましょう！</p>
+        `
+    },
+    {
+        id: "3",
+        title: "Homepageの更新をしました",
+        date: "2024-12-18",
+        author: "haruki saito",
+        content: `
+            <p>ホームページをJekyllで作成していましたが、より高速なHugoへと移行しました。</p>
+            <h2>ホームページに時間と労力をかけない</h2>
+            <p>Reactなどのフレームワークでホームページを作ろうとすると、最近のフロントエンド技術は進化が早いため、保守管理が大変になります。いかに労力をかけずシンプルに運用できるかが大切だと考えています。</p>
+            <h2>GitHubに教材を載せる</h2>
+            <p>教材の公開をGoogleドライブで考えていましたが、体系的なアクセスやバージョン管理の観点からGitHubは非常に優秀です。現在、授業スライドをMarkdownで作成できる「Marp」の導入について考察中です。</p>
+        `
+    }
+];
+
+function initBlog() {
+    const listEl = document.getElementById('blog-posts-list');
+    if (!listEl) return;
+
+    listEl.innerHTML = '';
+    blogPosts.forEach((post, index) => {
+        const item = document.createElement('div');
+        item.className = 'blog-item';
+        if (index === 0) item.classList.add('active-post');
+        item.innerHTML = `
+            <div class="blog-item-title">${post.title}</div>
+            <div class="blog-item-date">${post.date}</div>
+        `;
+        item.addEventListener('click', () => {
+            document.querySelectorAll('.blog-item').forEach(el => el.classList.remove('active-post'));
+            item.classList.add('active-post');
+            renderBlogPost(post.id);
+        });
+        listEl.appendChild(item);
+    });
+
+    if (blogPosts.length > 0) {
+        renderBlogPost(blogPosts[0].id);
+    }
+}
+
+function renderBlogPost(id) {
+    const contentEl = document.getElementById('blog-post-content');
+    if (!contentEl) return;
+
+    const post = blogPosts.find(p => p.id === id);
+    if (!post) return;
+
+    contentEl.innerHTML = `
+        <h1 class="blog-content-title">${post.title}</h1>
+        <div class="blog-content-meta">Date: ${post.date} | Author: ${post.author}</div>
+        <div class="blog-content-body">${post.content}</div>
+    `;
 }
 

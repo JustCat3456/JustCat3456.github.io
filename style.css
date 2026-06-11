@@ -681,4 +681,112 @@ body {
     .display-title {
         font-size: 26px;
     }
+    
+    /* モバイル向けブログウィンドウ調整 */
+    .blog-layout {
+        flex-direction: column;
+        height: auto;
+    }
+    .blog-sidebar {
+        width: 100%;
+        height: 120px;
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--color-text);
+    }
+    .blog-content-pane {
+        height: 250px;
+    }
+}
+
+/* --- BLOG SECTION (2-PANE) --- */
+.blog-body {
+    padding: 0 !important;
+    height: 380px;
+}
+
+.blog-layout {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.blog-sidebar {
+    width: 200px;
+    border-right: var(--border-width) solid var(--color-text);
+    background-color: var(--bg-window);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.blog-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--color-text);
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.blog-item-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+
+.blog-item-date {
+    color: var(--color-muted);
+}
+
+.blog-item:hover, .blog-item.active-post {
+    background-color: var(--color-text);
+    color: var(--bg-canvas);
+}
+.blog-item:hover .blog-item-date, .blog-item.active-post .blog-item-date {
+    color: var(--bg-window);
+}
+
+.blog-content-pane {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--bg-canvas);
+}
+
+.blog-content-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    border-bottom: var(--border-width) solid var(--color-text);
+    padding-bottom: 8px;
+}
+
+.blog-content-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-muted);
+    margin-bottom: 15px;
+}
+
+.blog-content-body {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.blog-content-body h1, .blog-content-body h2 {
+    font-size: 14px;
+    margin: 18px 0 8px 0;
+    border-bottom: 1px dashed var(--color-text);
+    padding-bottom: 4px;
+}
+
+.blog-content-body p {
+    margin-bottom: 12px;
+}
+
+.blog-content-body ul {
+    margin-left: 20px;
+    margin-bottom: 12px;
 }
