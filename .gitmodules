@@ -1,0 +1,10 @@
+[submodule "mysite/themes/blowfish"]
+	path = mysite/themes/blowfish
+	url = https://github.com/nunocoracao/blowfish.git
+	branch = main
+[submodule "mysite/themes/PaperMod"]
+	path = mysite/themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "JustCat3456.github.io/themes/PaperMod"]
+	path = JustCat3456.github.io/themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
