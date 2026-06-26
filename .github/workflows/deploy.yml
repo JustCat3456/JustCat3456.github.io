@@ -26,6 +26,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Generate blog posts metadata
+        run: python3 generate_posts.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

@@ -6,9 +6,13 @@
 // Blog posts metadata
 // ============================================================
 const BLOG_POSTS = [
-  { id: "1", title: "RQuickShareを使って簡単にファイル共有", date: "2024-12-20", author: "Haruki Saito", fileName: "rquick.md" },
-  { id: "2", title: "Linuxディストリビューションについての話", date: "2024-12-19", author: "haruki saito", fileName: "aboutlinux.md" },
-  { id: "3", title: "Homepageの更新をしました", date: "2024-12-18", author: "haruki saito", fileName: "firstpost.md" },
+  { id: "1", title: "Ubuntu 26.04でのAntigravity IDEをtar.gzでインストールする方法", date: "2026-06-27", author: "haruki saito", fileName: "Antigravity.md" },
+  { id: "2", title: "RQuickShareを使って簡単にファイル共有", date: "2024-12-20", author: "Haruki Saito", fileName: "rquick.md" },
+  { id: "3", title: "Happy Birthday Shion!", date: "2024-12-17", author: "haruki saito", fileName: "happybirthdayshion2024.md" },
+  { id: "4", title: "Linuxディストリビューションについての話", date: "2024-12-17", author: "haruki saito", fileName: "aboutlinux.md" },
+  { id: "5", title: "Marpによる授業スライド作成", date: "2024-12-03", author: "Haruki Saito", fileName: "aboutmarp.md" },
+  { id: "6", title: "Happy Birthday to me!", date: "2024-12-01", author: "haruki saito", fileName: "mybirthday2024.md" },
+  { id: "7", title: "Homepageの更新をしました", date: "2024-11-17", author: "haruki saito", fileName: "firstpost.md" },
 ];
 
 // ============================================================
@@ -509,6 +513,70 @@ function loadBlogPost(post, sidebar, contentPane) {
         <div class="blog-content-meta">Date: ${post.date} | Author: ${post.author}</div>
         <div class="blog-content-body">${html}</div>
       `;
+
+      // Dynamically add copy button to each code block
+      contentPane.querySelectorAll('.blog-content-body pre').forEach(pre => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+
+        const btn = document.createElement('button');
+        btn.className = 'copy-code-btn system-mono';
+        btn.textContent = 'COPY';
+        wrapper.appendChild(btn);
+
+        btn.addEventListener('click', () => {
+          const codeText = pre.querySelector('code')?.innerText || pre.innerText;
+
+          function showSuccess() {
+            btn.textContent = 'COPIED!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.textContent = 'COPY';
+              btn.classList.remove('copied');
+            }, 2000);
+          }
+
+          function showError(err) {
+            console.error('Failed to copy: ', err);
+            btn.textContent = 'ERR';
+            setTimeout(() => {
+              btn.textContent = 'COPY';
+            }, 2000);
+          }
+
+          function fallbackCopy(text) {
+            try {
+              const textArea = document.createElement('textarea');
+              textArea.value = text;
+              textArea.style.position = 'fixed';
+              textArea.style.top = '0';
+              textArea.style.left = '0';
+              textArea.style.opacity = '0';
+              document.body.appendChild(textArea);
+              textArea.focus();
+              textArea.select();
+              const successful = document.execCommand('copy');
+              document.body.removeChild(textArea);
+              return successful;
+            } catch (err) {
+              console.error('Fallback copy failed: ', err);
+              return false;
+            }
+          }
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(codeText)
+              .then(showSuccess)
+              .catch(err => {
+                fallbackCopy(codeText) ? showSuccess() : showError(err);
+              });
+          } else {
+            fallbackCopy(codeText) ? showSuccess() : showError('Clipboard API not supported');
+          }
+        });
+      });
     })
     .catch(() => {
       contentPane.innerHTML = `<p class="system-mono" style="color:red;">ERROR: 記事の読み込みに失敗しました。</p>`;
