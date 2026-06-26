@@ -1,6 +1,7 @@
 ---
 title: Happy Birthday Shion!
 author: haruki saito
+date: 2024-12-08
 ---
 
 Hapy Birthday Shion! 

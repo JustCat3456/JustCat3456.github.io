@@ -1,6 +1,7 @@
 ---
 title: Happy Birthday to me!
 author: haruki saito
+date: 2024-12-01
 ---
 
 誕生日おめでとう自分！

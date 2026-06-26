@@ -35,7 +35,7 @@ def main():
             filepath = os.path.join(posts_dir, filename)
             
             with open(filepath, 'r', encoding='utf-8') as f:
-                content = f.read()
+                content = f.read().replace('\r\n', '\n')
             
             # Parse simple frontmatter between first and second '---'
             match = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)

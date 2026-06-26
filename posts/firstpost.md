@@ -1,6 +1,7 @@
 ---
 title: Homepageの更新をしました
 author: haruki saito
+date: 2025-01-08
 ---
 
 # jekyllから更新をしました

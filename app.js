@@ -7,12 +7,12 @@
 // ============================================================
 const BLOG_POSTS = [
   { id: "1", title: "Ubuntu 26.04でのAntigravity IDEをtar.gzでインストールする方法", date: "2026-06-27", author: "haruki saito", fileName: "Antigravity.md" },
-  { id: "2", title: "RQuickShareを使って簡単にファイル共有", date: "2024-12-20", author: "Haruki Saito", fileName: "rquick.md" },
-  { id: "3", title: "Happy Birthday Shion!", date: "2024-12-17", author: "haruki saito", fileName: "happybirthdayshion2024.md" },
-  { id: "4", title: "Linuxディストリビューションについての話", date: "2024-12-17", author: "haruki saito", fileName: "aboutlinux.md" },
-  { id: "5", title: "Marpによる授業スライド作成", date: "2024-12-03", author: "Haruki Saito", fileName: "aboutmarp.md" },
-  { id: "6", title: "Happy Birthday to me!", date: "2024-12-01", author: "haruki saito", fileName: "mybirthday2024.md" },
-  { id: "7", title: "Homepageの更新をしました", date: "2024-11-17", author: "haruki saito", fileName: "firstpost.md" },
+  { id: "2", title: "Homepageの更新をしました", date: "2025-01-08", author: "haruki saito", fileName: "firstpost.md" },
+  { id: "3", title: "RQuickShareを使って簡単にファイル共有", date: "2024-12-20", author: "Haruki Saito", fileName: "rquick.md" },
+  { id: "4", title: "Linuxディストリビューションについての話", date: "2024-12-12", author: "haruki saito", fileName: "aboutlinux.md" },
+  { id: "5", title: "Happy Birthday Shion!", date: "2024-12-08", author: "haruki saito", fileName: "happybirthdayshion2024.md" },
+  { id: "6", title: "Marpによる授業スライド作成", date: "2024-12-03", author: "Haruki Saito", fileName: "aboutmarp.md" },
+  { id: "7", title: "Happy Birthday to me!", date: "2024-12-01", author: "haruki saito", fileName: "mybirthday2024.md" },
 ];
 
 // ============================================================
