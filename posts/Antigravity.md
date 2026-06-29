@@ -59,13 +59,18 @@ curl -fsSL https://antigravity.google/cli/install.sh | bash
 
 2. 任意の場所に解凍します。
    ```bash
-   tar -zxvf antigravity-linux-x64.tar.gz
+   tar -zxvf "Antigravity IDE.tar.gz"
    ```
+
+> **注意**
+> なぜか公式のものでは"スペース"が入っているので""で囲わないと色々と面倒くさいことになります。(なぜスペースを入れたんだgoogle...)
+> 私は解凍後 `mv "Antigravity IDE" antigravity_ide` でスペースを削除しました
+> 以下からアンダースコアを使って記述してますので皆さんの環境に合わせて変えてください
 
 3. 解凍すると、以下のようなフォルダ・ファイル構成になります。
 
    ```text
-   antigravity-linux-x64/
+   Antigravity_IDE/
    ├── bin/
    ├── locales/
    ├── resources/
@@ -89,12 +94,12 @@ curl -fsSL https://antigravity.google/cli/install.sh | bash
 
 4. 解凍したディレクトリを `/opt/` ディレクトリに移動します（システム全体で共有するために `sudo` 権限が必要です）。
    ```bash
-   sudo mv antigravity-linux-x64 /opt/antigravity-ide
+   sudo mv Antigravity_IDE /opt/
    ```
 
 5. 移動先のディレクトリに移動して、`antigravity-ide` を実行して起動します。
    ```bash
-   cd /opt/antigravity-ide
+   cd /opt/Antigravity_IDE
    ./antigravity-ide
    ```
 
@@ -102,7 +107,7 @@ curl -fsSL https://antigravity.google/cli/install.sh | bash
 
    また、どのディレクトリからでも簡単に起動できるように、`/usr/local/bin` にシンボリックリンクを作成しておくと便利です。
    ```bash
-   sudo ln -s /opt/antigravity-ide/antigravity-ide /usr/local/bin/antigravity-ide
+   sudo ln -s /opt/Antigravity_IDE/antigravity-ide /usr/local/bin/antigravity-ide
    ```
    作成後は、ターミナルで `antigravity-ide` と入力するだけで起動可能になります。
 
@@ -122,10 +127,10 @@ curl -fsSL https://antigravity.google/cli/install.sh | bash
    ```bash
    [Desktop Entry]
    Name=Antigravity IDE
-   Exec=/opt/antigravity-ide/antigravity-ide
+   Exec=/opt/Antigravity_IDE/antigravity-ide
    Terminal=false
    Type=Application
-   Icon=/opt/antigravity-ide/resources/antigravity.png
+   Icon=/opt/Antigravity_IDE/resources/app/resources/linux/code.png
    Comment=AI-powered development environment
    Categories=Development;IDE;
    ```
